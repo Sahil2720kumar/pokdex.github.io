@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script type="text/javascript" src="js/eruda.js"></script>
+	<script>eruda.init();</script>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Pokemon website</title>
+	<link rel="stylesheet" href="css/style.css" >
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+	<!-- link animation css.  -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+	<!-- Bootstrap CSS -->
+	 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+	<title>Pokedex website</title>
+</head>
+<body>
+
+<!--**************** preloaded ***************-->
+	<div  id="spinner" >
+	    <div class="o-pokeball c-loader u-rubber-band">
+			<span hidden="hidden"  class="visually-hidden">Loading...</span>
+	    </div>
+	</div>
+<!--**************** END preloaded ***************-->
+
+<!-- ************	navbar  *********** -->
+	<nav id="nav" class="navbar sticky-top navbar-light "  >
+	   <div class="menu-icon">
+	      <span class="fas fa-bars"></span>
+	   </div>
+	   <div class="logo">
+	      Pokedex
+	   </div>
+	   <div class="nav-items">
+	      <li><a href="#">Home</a></li>
+	      <li><a href="#">About</a></li>
+	      <li><a href="#">Blogs</a></li>
+	      <li><a href="#">Contact</a></li>
+	      <li><a href="#">Feedback</a></li>
+	   </div>
+	   <div class="search-icon">
+	      <span class="fas fa-search"></span>
+	   </div>
+	   <div class="cancel-icon">
+	      <span class="fas fa-times"></span>
+	   </div>
+	   <form action="#">
+	      <input id="search_poke"  type="search" class="search-data" placeholder="Search" required>
+	      <button type="submit" onclick="search_pokemon()" class="fas fa-search"></button>
+	   </form>
+	</nav>
+<!-- ************ End navbar  *********** -->
+
+<!--************* Bootstrap carousel **********************-->
+	<div id="carouselExampleDark" class="carousel carousel-light slide" data-bs-ride="carousel">
+	  <div class="carousel-indicators">
+	    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+	    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+	    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+	    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="3" aria-label="Slide 4"></button>
+	    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="4" aria-label="Slide 5"></button>
+	    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="5" aria-label="Slide 6"></button>
+	    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="6" aria-label="Slide 7"></button>
+	    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="7" aria-label="Slide 8"></button>
+	  </div>
+	  <div class="carousel-inner">
+	    <div class="carousel-item active" data-bs-interval="10000">
+	      <img style="height:100%;"  src="https://1.bp.blogspot.com/-D-KIS8FBiaQ/XPK4ud1_qJI/AAAAAAAAAl8/Yloq5C6aLXABGqk_sz6WuGn_hlxVfW9xgCLcBGAs/s640/0ae93737-c214-40f8-ac95-b153e2083596.png" class="d-block w-100 " alt="...">
+	      <div class="carousel-caption">
+	        <h5>KANTO</h5>
+	        <p>The Kanto region (Japanese: カントー地方 Kanto region) is a region of the Pokémon world. Kanto is located east of Johto, which together form a joint landmass that is south of Sinnoh.</p>
+	      	<div class="btn-group" role="group" aria-label="Basic mixed styles example">
+	      		<button type="button" onclick="pokeFun(1,50);" class="btn btn-danger">KANTO POKEMON</button>
+	      	</div>
+	      </div>
+	    </div>
+		<div class="carousel-item" data-bs-interval="10000">
+		  <img style="height:100%;" src="https://1.bp.blogspot.com/-0nmyPW8nKsY/XPK40BytFgI/AAAAAAAAAmA/3DrIo9BS_L06R_G7ARNTXRAlEikTGZfzACLcBGAs/s1600/3b0a9edd-1dc3-43e9-a4bf-2ef6bab84d2c.png"  class="d-block w-100 " alt="...">
+		  <div class="carousel-caption">
+		    <h5>JOHTO</h5>
+		    <p>The Johto region (Japanese: ジョウト地方 Johto region) is a region of the Pokémon world. Johto is located west of Kanto, which together form a joint landmass that is south of Sinnoh and Sinjoh Ruins.</p>
+		  	<div class="btn-group" role="group" aria-label="Basic mixed styles example">
+		  		<button type="button" onclick="pokeFun(152,202)" class="btn btn-danger">JOHTO POKEMON</button>
+		  	</div>
+		  </div>
+		</div>
+		<div class="carousel-item" data-bs-interval="10000">
+		  <img style="height:100%;"  src="https://1.bp.blogspot.com/-YqlvgrkJQfM/XPK48XXF4II/AAAAAAAAAmU/5ngPF32b8I89t5hfxogwcgZQpwuwXegEgCLcBGAs/s1600/b754d1f0-51bd-43d1-b12d-7548b751ee5a.png"  class="d-block w-100 " alt="...">
+		  <div class="carousel-caption">
+		    <h5>HOENN</h5>
+		    <p>The Hoenn region (Japanese: ホウエン地方 Hoenn region) is a region of the Pokémon world. It is located south of Sinnoh,[1] and southwest of both Kanto and Johto.[2] It is the setting of Pokémon Ruby, Sapphire, Emerald, Omega Ruby, and Alpha Sapphire. It was the third core series region to be introduced.</p>
+		  	<div class="btn-group" role="group" aria-label="Basic mixed styles example">
+		  		<button type="button" onclick="pokeFun(252,302)" class="btn btn-danger">HONNE POKEMON</button>
+		  	</div>
+		  </div>
+		</div>
+		<div class="carousel-item" data-bs-interval="10000">
+		  <img style="height:100%;"  src="https://1.bp.blogspot.com/-rb2DiD_5Q5s/XPK43z4w7KI/AAAAAAAAAmM/SsmDIpr3OyQxRx7lczzwPOKXu8v0dpGOACLcBGAs/s640/1cb98c87-7d34-4bc9-a241-5b29ac8a959d.png" class="d-block w-100 " alt="...">
+		  <div class="carousel-caption">
+		    <h5>SINNOH</h5>
+			<p>The Sinnoh region (Japanese: シンオウ地方 Sinnoh region), formerly known as Hisui (Japanese: ヒスイ地方 Hisui region), is a region of the Pokémon world. It is located north of Kanto,[1] Johto,[1] and Hoenn.[2] It is the setting of Pokémon Diamond, Pearl, Platinum, Brilliant Diamond, Shining Pearl, and Legends: Arceus;</p>
+		  	<div class="btn-group" role="group" aria-label="Basic mixed styles example">
+		  		<button type="button" onclick="pokeFun(387,437)" class="btn btn-danger">SINNOH POKEMON</button>
+		  	</div>
+		  </div>
+		</div>
+		<div class="carousel-item" data-bs-interval="10000">
+		  <img style="height:100%;"  src="https://1.bp.blogspot.com/-ATX3BrL5sBc/XPK41KVNdqI/AAAAAAAAAmE/rfOJ7xZzflcjyzNfX6m-EoETJM5e59zigCLcBGAs/s1600/38336418-29fc-4de5-8b9d-9e8252a2e640.png"  class="d-block w-100 " alt="...">
+		  <div class="carousel-caption">
+		    <h5>UNOVA</h5>
+			<p>The Unova region (Japanese: イッシュ地方 Isshu region) is a region of the Pokémon world. It is the setting of Pokémon Black and White and Pokémon Black 2 and White 2. It was the fifth core series region to be introduced.</p>
+		  	<div class="btn-group" role="group" aria-label="Basic mixed styles example">
+		  		<button type="button" onclick="pokeFun(494,544)" class="btn btn-danger">UNOVA POKEMON</button>
+		  	</div>
+		  </div>
+		</div>
+		<div class="carousel-item" data-bs-interval="10000">
+		  <img style="height:100%;"  src="https://1.bp.blogspot.com/-Xwx3d78vyrw/XPK44y_LFxI/AAAAAAAAAmQ/77xw6nzhBpQAZgn_wd6gcv7BaRU7TBVkgCLcBGAs/s1600/7fdb3ba0-af2f-4455-ad43-48a45357b604.png"  class="d-block w-100 " alt="...">
+		  <div class="carousel-caption">
+		    <h5>KALOS</h5>
+			<p>The Kalos region (Japanese: カロス地方 Kalos region) is a region of the Pokémon world. It was the sixth core series region to be introduced and is the setting of Pokémon X and Y.</p>
+		  	<div class="btn-group" role="group" aria-label="Basic mixed styles example">
+		  		<button type="button" onclick="pokeFun(650,700)" class="btn btn-danger">KALOS POKEMON</button>
+		  	</div>
+		  </div>
+		</div>
+		<div class="carousel-item" data-bs-interval="10000">
+		  <img style="height:100%;"  src="https://64.media.tumblr.com/c3e16f8b9654a043aa1bf968bc0a6784/41c97d361dc9e487-ed/s500x750/0e4fafdf7af7e1570d7c3e971a3c09691e51b909.jpg"  class="d-block w-100 " alt="...">
+		  <div class="carousel-caption">
+		    <h5>ALOLA</h5>
+			<p>The Alola region (Japanese: アローラ地方 Alola region) is a region of the Pokémon world. It was the seventh core series region to be introduced and is the setting of Pokémon Sun, Moon, Ultra Sun, and Ultra Moon.</p>
+		  	<div class="btn-group" role="group" aria-label="Basic mixed styles example">
+		  		<button type="button" onclick="pokeFun(722,772)" class="btn btn-danger">ALOLA POKEMON</button>
+		  	</div>
+		  </div>
+		</div>
+		<div class="carousel-item" data-bs-interval="10000">
+		  <img style="height:100%;"  src="https://64.media.tumblr.com/82bd2c425a1317ebadfb553a8d8e65fa/41c97d361dc9e487-74/s500x750/7f2c3cfdc253936c704965a85af857e513c8236f.png"  class="d-block w-100 " alt="...">
+		  <div class="carousel-caption">
+		    <h5>GALAR</h5>
+			<p>The Galar region (Japanese: ガラル地方 Galar region) is a region of the Pokémon world, and the eighth core series region to be introduced. It is the setting of Pokémon Sword and Shield.</p>
+		  	<div class="btn-group" role="group" aria-label="Basic mixed styles example">
+		  		<button type="button" onclick="pokeFun(810,860);" class="btn btn-danger">GALAR POKEMON</button>
+		  	</div>
+		  </div>
+		</div>
+	  </div>
+	  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+	    <span   class="carousel-control-prev-icon" aria-hidden="true"></span>
+	    <span   class="visually-hidden">Previous</span>
+	  </button>
+	  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+	    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+	    <span class="visually-hidden">Next</span>
+	  </button>
+	</div>
+<!--************* End  Bootstrap carousel **********************-->	
+	
+<!--*************  Bootstrap Cards **********************-->		
+	
+	<div id="heading_pokemon" ><h3>Pokemons List</h3></div>
+	
+	<div  id="cards_div_parent"   >
+		<!--Cards-->
+	</div>
+	
+	
+<!--.     pagination  start.       -->
+	<div style="overflow: scroll;"  id="pagination_parent" class="container-fluid" >
+	
+	</div>
+<!--.     pagination  End.       -->
+		
+		
+		
+<!--.     footer start.       -->
+	<footer id="footer_container" style="padding:10px;"  >
+		<div id="footer_social">
+			<a target="_sahil"  href="https://m.facebook.com/profile.php"><i class="fab fa-facebook-f"></i></a>
+			<a target="_sahil" href="https://mobile.twitter.com/Sahil2720kumar"><i class="fab fa-twitter"></i></a>
+			<a target="_sahil" href="https://www.instagram.com/sahil2720kumar/"><i class="fab fa-instagram"></i></a>
+			<a target="_sahil" href="https://github.com/Sahil2720kumar/Sahil2720kumar"><i class="fab fa-github"></i></a>
+		</div>
+		<div id="copyright" >
+			<p style="text-align:center;" >Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fas fa-heart" aria-hidden="true"></i> by <a href="#" target=""> SAHIL </a></p>
+		</div>
+	</footer>
+<!--.   END  footer .       -->
+
+<!--.   start page scroll up.       -->
+	<div id="srcollup" class="flex"  >
+		<i style="font-size:28px;color:white;"  class="fas fa-angle-up"></i>
+	</div>		
+<!--.   End page scroll up.       -->	
+	
+	
+	
+<!--animation js-->
+<script src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script src='//cdnjs.cloudflare.com/ajax/libs/quo.js/2.3.1/quo.js'></script>
+<!-- Option 1: Bootstrap Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<!-- my JavaScript-->
+<script type="text/javascript" src="js/loader.js" ></script>
+<script type="text/javascript" src="js/script.js"></script>
+<script type="text/javascript" src="js/search.js"></script>
+</body>
+</html>

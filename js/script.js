@@ -78,7 +78,7 @@ const pokeFun=async(pokeregion_start,pokeregion_end)=>{
 	try{
 		console.log(pokeregion_start,pokeregion_end)
 		var pagi_page_move_start=1;
-		var pagi_page_move_end=50
+		var pagi_page_move_end=20
 		nameArr_oninput=[]
 		id_Arr=[]
 		card_div_arr=[]

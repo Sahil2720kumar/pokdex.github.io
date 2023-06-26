@@ -98,17 +98,17 @@ const pokeFun=async(pokeregion_start,pokeregion_end)=>{
 		
 		if(pokeregion_start<=0 || pokeregion_end<=1){
 			pokeregion_start=1;
-			pokeregion_end=50;
+			pokeregion_end=20;
 		}
 		
 		if(pokeregion_start>=1000 || pokeregion_end>=1000){
 			pokeregion_start=1;
-			pokeregion_end=50;
+			pokeregion_end=20;
 		}
 		
 		if(pokeregion_start==null && pokeregion_end==null){
 			pokeregion_start=1
-			pokeregion_end=50
+			pokeregion_end=20
 		}
 		
 		try{
@@ -146,7 +146,7 @@ const pokeFun=async(pokeregion_start,pokeregion_end)=>{
 		
 		//********pokemon features*************
 		console.time();
-		for(let j=pokeregion_start;j<pokeregion_start+50;j++){
+		for(let j=pokeregion_start;j<pokeregion_start+20;j++){
 		//678 700	
 			spishow()
 			let fetch1=fetch('https://pokeapi.co/api/v2/pokemon/'+j+'/')
@@ -576,13 +576,13 @@ const pokeFun=async(pokeregion_start,pokeregion_end)=>{
 				</nav>`	
 				pagination_parent.appendChild(pagidiv);
 				
-				let pagi_totalpage_no=(poke_end/25)+1
+				let pagi_totalpage_no=(poke_end/10)+1
 				/*	console.log("page no",pagi_totalpage_no)*/
 				
 				for(let pagi_no=1;pagi_no<pagi_totalpage_no;pagi_no++){
 					let pagi_ul=document.getElementById('pagi_ul')
 					
-					if(pagi_no>20 || pagi_no==21){
+					if(pagi_no>25 || pagi_no==25){
 						break;
 					}
 					

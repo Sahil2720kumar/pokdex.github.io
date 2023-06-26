@@ -592,7 +592,7 @@ const pokeFun=async(pokeregion_start,pokeregion_end)=>{
 						`			
 					}else if(pagi_no>1){
 						pagi_ul.innerHTML+=`
-						<li onclick="pokeFun(${pagi_page_move_start+=50},${pagi_page_move_end+=50})" class="page-item"><a class="page-link texts-white" href="#">${pagi_no}</a></li>
+						<li onclick="pokeFun(${pagi_page_move_start+=20},${pagi_page_move_end+=20})" class="page-item"><a class="page-link texts-white" href="#">${pagi_no}</a></li>
 						`						
 					}
 							
